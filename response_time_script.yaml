@@ -1,0 +1,32 @@
+config:
+  target: http://127.0.0.1:5000/api/rooms/
+  phases:
+    - duration: 5
+      arrivalRate: 1
+      
+    - duration: 5
+      arrivalRate: 10
+
+    - duration: 5
+      arrivalRate: 50
+
+    - duration: 5
+      arrivalRate: 100
+
+    - duration: 5
+      arrivalRate: 200
+
+    - duration: 5
+      arrivalRate: 500
+
+    - duration: 5
+      arrivalRate: 1000
+
+
+   
+  defaults:
+    headers:
+scenarios:
+  - flow:
+      - get:
+          url: "/"
