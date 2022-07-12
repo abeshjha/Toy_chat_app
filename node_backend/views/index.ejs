@@ -1,0 +1,59 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Toy Chat application</title>    
+    <link rel="stylesheet" type="text/css" href="style.css">   
+    <script type="text/javascript">
+		$(document).ready(function(){
+
+			$( "#form" ).submit(function(event) {
+				event.preventDefault();
+
+				$.ajax({
+					type: 'POST',
+					url: '/login',
+					data: $('#form').serialize(),
+					dataType: "json",
+					success: function(response){
+						//alert("a");
+						//console.log(response.Success);
+						$('#form')[0].reset();
+
+						document.getElementById("check").innerHTML=response.Success;
+         					//ADD THIS CODE
+         					setTimeout(function(){
+         						document.getElementById("check").innerHTML="";
+         					},3000);
+         					if (response.Success=="Success!") {
+         						document.getElementById("aa").click();
+         					};
+         				},
+         				error: function() {
+         				}
+         			})
+			});
+
+		});
+	</script> 
+</head>    
+<body>    
+   <center><h1 style="color:green;">Toy Chat Application by Aaves</h1><br> </center>    
+    <div class="login">    
+    <form id="login" method="post" action="/">    
+        <label><b>User Name     
+        </b>    
+        </label>    
+        <input type="text" name="username" id="Uname" placeholder="Username">    
+        <br><br>    
+        <label><b>Password     
+        </b>    
+        </label>    
+        <input type="Password" name="password" id="Pass" placeholder="Password">    
+        <br><br><br>
+        <input type="submit" name="login" id="log" value="Login">       
+        <br><br>  <br><br>
+         <center><a href="/register">Not a user yet? Register Here</a>  </center>  
+    </form>     
+</div>    
+</body>    
+</html> 

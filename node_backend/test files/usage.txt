@@ -1,0 +1,12 @@
+This is the usage part of how to run a node js file from the scratch. Because of my background 
+the learning curve seems to be really fast and the efficiency is also high.
+
+- install node.js
+-create a dir for your project and create an index.js file
+-npm init to initalize the folder
+-this will also load the modules dir which contains all the modules.
+-you can later use git init to configure your project to github. However modules folder should not be there.
+-pacakge.json contains the file for all the packages you have installed and package-lock.json consists of the 
+dependendies used by those packages.
+-npm install express --save to install express in the given directory. 
+--npm install -g nodemon for autorun the changes.

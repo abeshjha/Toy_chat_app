@@ -1,0 +1,4 @@
+1) change the database connection to take input from the model
+2) use the deafult file for the css folder from the assests/css folder in index.html
+3)use some success message while registration
+4)change the way error is displayed for login failed/email mismatch
